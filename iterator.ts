@@ -1,5 +1,34 @@
+import { ProductCollection } from "./iterator/ProductCollection";
 
+let productCollection = new ProductCollection();
+productCollection.addProduct("cheese");
+productCollection.addProduct("mouse");
+productCollection.addProduct("cat");
 
+productCollection.createIteratorForward();
+while (productCollection.getIterator().hasNext()) {
+    console.log(`ITERATOR FORWARD: product is ${productCollection.getIterator().current()}`);
+    productCollection.getIterator().increment();
+}
+
+console.log('========================');
+
+productCollection.addProduct("sex");
+productCollection.addProduct("camera");
+
+productCollection.createIteratorBackwards();
+while (productCollection.getIterator().hasNext()) {
+    console.log(`ITERATOR BACKWARDS: product is ${productCollection.getIterator().current()}`);
+    productCollection.getIterator().increment();
+}
+
+console.log('========================');
+
+productCollection.createIteratorForward();
+while (productCollection.getIterator().hasNext()) {
+    console.log(`ITERATOR FORWARD: product is ${productCollection.getIterator().current()}`);
+    productCollection.getIterator().increment();
+}
 
 // Exercise
 
