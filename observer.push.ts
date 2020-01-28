@@ -1,7 +1,7 @@
-import { DataSource } from "./observer/DataSource";
-import { SpreadSheet } from "./observer/Spreadsheet";
-import { Chart } from "./observer/Chart";
-import { Switch } from "./observer/Switch";
+import { DataSource } from "./observer-push/DataSource";
+import { SpreadSheet } from "./observer-push/Spreadsheet";
+import { Chart } from "./observer-push/Chart";
+import { Switch } from "./observer-push/Switch";
 
 let dataSourceSpreadsheets = new DataSource<string>();
 let dataSourceCharts = new DataSource<number>();
@@ -26,3 +26,8 @@ dataSourceSpreadsheets.setValue('marian');
 let switch2 = new Switch();
 dataSourceSwitches.addObserver(switch2);
 dataSourceSwitches.setValue(false);
+
+
+// PROBLEM: implement a way for different UI such as chart, spreadsheets and switches to update 
+// from a single source of through, when stuff changes there. A way to notify and update
+// similar to publishing/subscribing behaviour.

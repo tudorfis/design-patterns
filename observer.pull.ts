@@ -21,3 +21,8 @@ dataSourceCharts.setValue(1);
 
 dataSourceSwitches.addObserver(switch1);
 dataSourceSwitches.setValue(true);
+
+
+// PROBLEM: implement a way for different UI such as chart, spreadsheets and switches to update 
+// from a single source of through, when stuff changes there. A way to notify and update
+// similar to publishing/subscribing behaviour.
