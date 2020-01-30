@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Group_1 = require("./composite-demo/Group");
+var Shape_1 = require("./composite-demo/Shape");
+var group = new Group_1.Group();
+group.addComponent(new Shape_1.Shape());
+group.addComponent(new Shape_1.Shape());
+group.addComponent(new Shape_1.Shape());
+group.render();
+group.move();
